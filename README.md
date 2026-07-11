@@ -16,8 +16,12 @@ cycles, chemical equilibrium and CFD/kinetics property provision.
 ## Requirements
 
 ```bash
+# pip
 pip install pyglenn
 pip install numpy pandas matplotlib scipy   # used for plots, tables and solvers
+
+# conda / mamba
+conda install -c conda-forge pyglenn numpy pandas matplotlib scipy
 ```
 
 Every notebook opens with the same short preamble that connects to the bundled
@@ -27,17 +31,17 @@ lookups.
 ## The notebooks
 
 | # | Notebook | What it covers |
-|---|----------|----------------|
-| 01 | [Getting Started](notebooks/01_getting_started.ipynb) | Connecting, searching species, computing $C_p$/$H$/$S$, interpreting the returned values, error handling |
-| 02 | [NASA Polynomials Under the Hood](notebooks/02_nasa_polynomials.ipynb) | The 9-term polynomial math; reproducing the API from raw coefficients; piecewise intervals; meaning of $b_1, b_2$ |
-| 03 | [Temperature-Dependent Properties & Plotting](notebooks/03_property_curves.ipynb) | $C_p(T)$, $S(T)$, $H(T)$ curves; equipartition and vibrational excitation; property tables with pandas |
-| 04 | [Enthalpy of Formation from NASA Polynomials](notebooks/04_formation_enthalpy.ipynb) | Recovering $\Delta_f H^\circ$ from the standardized enthalpy; validation against literature |
-| 05 | [Reaction Enthalpies & Heats of Combustion](notebooks/05_reaction_enthalpies.ipynb) | $\Delta H_\mathrm{rxn}(T)$, LHV/HHV, Kirchhoff's law, Hess's law |
-| 06 | [Adiabatic Flame Temperature](notebooks/06_adiabatic_flame_temperature.ipynb) | Energy-balance solve for $T_\mathrm{ad}$; equivalence ratio, preheat, fuel comparison |
-| 07 | [Comparing Fuels & Biofuels](notebooks/07_biofuel_comparison.ipynb) | Ethanol / methanol / gasoline / jet-fuel: energy density, air-fuel ratio, CO₂ intensity (a GESESC use case) |
-| 08 | [Chemical Equilibrium & Gibbs Free Energy](notebooks/08_equilibrium_gibbs.ipynb) | $G^\circ = H^\circ - TS^\circ$; $K(T)$; water-gas shift; van't Hoff; high-T dissociation |
-| 09 | [Brayton Gas-Turbine Cycle](notebooks/09_brayton_cycle.ipynb) | Air-standard Brayton with real $C_p(T)$; isentropic states via entropy; efficiency vs pressure ratio |
-| 10 | [Property Provider for CFD & Chemical Kinetics](notebooks/10_property_provider.ipynb) | Batch tables, a cached coefficient provider, a benchmark, and an ODE integration |
+|---|---------------|----------------|
+| 01 | [Getting Started](notebooks/en/01_getting_started.ipynb) | Connecting, searching species, computing $C_p$/$H$/$S$, interpreting the returned values, error handling |
+| 02 | [NASA Polynomials Under the Hood](notebooks/en/02_nasa_polynomials.ipynb) | The 9-term polynomial math; reproducing the API from raw coefficients; piecewise intervals; meaning of $b_1, b_2$ |
+| 03 | [Temperature-Dependent Properties & Plotting](notebooks/en/03_property_curves.ipynb) | $C_p(T)$, $S(T)$, $H(T)$ curves; equipartition and vibrational excitation; property tables with pandas |
+| 04 | [Enthalpy of Formation from NASA Polynomials](notebooks/en/04_formation_enthalpy.ipynb) | Recovering $\Delta_f H^\circ$ from the standardized enthalpy; validation against literature |
+| 05 | [Reaction Enthalpies & Heats of Combustion](notebooks/en/05_reaction_enthalpies.ipynb) | $\Delta H_\mathrm{rxn}(T)$, LHV/HHV, Kirchhoff's law, Hess's law |
+| 06 | [Adiabatic Flame Temperature](notebooks/en/06_adiabatic_flame_temperature.ipynb) | Energy-balance solve for $T_\mathrm{ad}$; equivalence ratio, preheat, fuel comparison |
+| 07 | [Comparing Fuels & Biofuels](notebooks/en/07_biofuel_comparison.ipynb) | Ethanol / methanol / gasoline / jet-fuel: energy density, air-fuel ratio, CO₂ intensity (a GESESC use case) |
+| 08 | [Chemical Equilibrium & Gibbs Free Energy](notebooks/en/08_equilibrium_gibbs.ipynb) | $G^\circ = H^\circ - TS^\circ$; $K(T)$; water-gas shift; van't Hoff; high-T dissociation |
+| 09 | [Brayton Gas-Turbine Cycle](notebooks/en/09_brayton_cycle.ipynb) | Air-standard Brayton with real $C_p(T)$; isentropic states via entropy; efficiency vs pressure ratio |
+| 10 | [Property Provider for CFD & Chemical Kinetics](notebooks/en/10_property_provider.ipynb) | Batch tables, a cached coefficient provider, a benchmark, and an ODE integration |
 
 ## A note on the data
 
@@ -55,5 +59,5 @@ lookups.
 The notebooks are committed with their outputs already executed. To re-run:
 
 ```bash
-jupyter nbconvert --to notebook --execute --inplace notebooks/*.ipynb
+jupyter nbconvert --to notebook --execute --inplace notebooks/en/*.ipynb
 ```
