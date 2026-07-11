@@ -11,6 +11,8 @@ The topics follow the applications outlined in the package's `ideias.md`
 (Dr. Reginaldo G. Leão Jr., GESESC / IFMG): combustion, biofuels, thermodynamic
 cycles, chemical equilibrium and CFD/kinetics property provision.
 
+<img src="images/pyglenn-overview.png" alt="pyglenn overview" width="300"/>
+
 ## Requirements
 
 ```bash
