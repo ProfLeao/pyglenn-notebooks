@@ -1,5 +1,9 @@
 # pyglenn — Worked Examples (Jupyter Notebooks)
 
+[![Docs](https://github.com/ProfLeao/pyglenn-notebooks/actions/workflows/docs.yml/badge.svg)](https://profleao.github.io/pyglenn-notebooks)
+
+📖 **Documentation:** [profleao.github.io/pyglenn-notebooks](https://profleao.github.io/pyglenn-notebooks)
+
 A collection of ten elaborated, self-contained Jupyter notebooks demonstrating
 the [`pyglenn`](https://github.com/ProfLeao/pyglenn) thermochemical properties
 calculator. `pyglenn` reconstructs the standard-state molar properties
