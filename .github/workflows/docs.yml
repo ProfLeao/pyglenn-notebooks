@@ -50,6 +50,9 @@ jobs:
             docs/source/09_brayton_cycle.ipynb \
             docs/source/10_property_provider.ipynb
 
+      - name: Install pandoc
+        run: sudo apt-get install -y pandoc
+
       - name: Build Sphinx documentation
         run: |
           cp images/pyglenn-overview.png docs/source/_static/
