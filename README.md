@@ -65,3 +65,23 @@ The notebooks are committed with their outputs already executed. To re-run:
 ```bash
 jupyter nbconvert --to notebook --execute --inplace notebooks/en/*.ipynb
 ```
+
+## Citing
+
+If you use this repository in your research or teaching, please cite it via Zenodo:
+
+> Gonçalves Leão Junior, R. (2026). *pyglenn-notebooks*. Zenodo. https://doi.org/10.5281/zenodo.21324685
+
+**BibTeX:**
+
+```bibtex
+@software{goncalves_leao_junior_2026_21324685,
+  author       = {Gonçalves Leão Junior, Reginaldo},
+  title        = {pyglenn-notebooks},
+  month        = jul,
+  year         = 2026,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.21324685},
+  url          = {https://doi.org/10.5281/zenodo.21324685},
+}
+```

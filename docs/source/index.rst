@@ -72,3 +72,27 @@ About the data
 * In the bundled database the dedicated ``heat_of_formation_298K`` column is not
   populated, so ``calculate_formation_enthalpy()`` returns ``None``. Notebook 04
   shows how to obtain :math:`\Delta_f H^\circ` from ``h_relative`` at 298.15 K instead.
+
+----
+
+Citing
+======
+
+If you use this repository in your research or teaching, please cite it via Zenodo:
+
+  Gonçalves Leão Junior, R. (2026). **pyglenn-notebooks**. Zenodo.
+  https://doi.org/10.5281/zenodo.21324685
+
+BibTeX:
+
+.. code-block:: bibtex
+
+   @software{goncalves_leao_junior_2026_21324685,
+     author       = {Gonçalves Leão Junior, Reginaldo},
+     title        = {pyglenn-notebooks},
+     month        = jul,
+     year         = 2026,
+     publisher    = {Zenodo},
+     doi          = {10.5281/zenodo.21324685},
+     url          = {https://doi.org/10.5281/zenodo.21324685},
+   }
