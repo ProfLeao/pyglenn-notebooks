@@ -1,0 +1,26 @@
+/* ---- Logo sizing: 180px (original 300px × 60%) ---- */
+.wy-side-nav-search > a img.logo,
+.wy-side-nav-search > a img {
+    max-width: 180px !important;
+    height: auto !important;
+}
+
+/* ---- Remove auto-numbering from sidebar toctree ---- */
+.wy-menu-vertical .toctree-l1 > a::before {
+    content: none !important;
+}
+
+/* ---- Hide toctree wrapper in body (from :hidden: toctree) ---- */
+.toctree-wrapper {
+    display: none;
+}
+
+/* ---- Wider sidebar for notebook titles ---- */
+.wy-nav-side {
+    min-width: 280px;
+}
+
+/* ---- Content area improvements ---- */
+.wy-nav-content {
+    max-width: 960px;
+}
