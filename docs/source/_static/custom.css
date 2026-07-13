@@ -24,3 +24,37 @@
 .wy-nav-content {
     max-width: 960px;
 }
+
+/* ---- Notebook notice bar with download button ---- */
+.nb-notice {
+    background: #e7f2fa;
+    border-left: 4px solid #2980b9;
+    padding: 8px 12px;
+    margin-bottom: 16px;
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* ---- Download notebook button ---- */
+.nb-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #2980b9;
+    color: #fff !important;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none !important;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+.nb-download-btn:hover {
+    background: #1c6ea0;
+    color: #fff !important;
+}

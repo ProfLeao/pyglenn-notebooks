@@ -29,10 +29,22 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # Ensure .nojekyll is present for GitHub Pages
 html_extra_path = []
 
+def copy_notebooks(app, exc):
+    """Copy .ipynb source files to _static/notebooks/ so they can be downloaded."""
+    import shutil
+    dest_dir = os.path.join(app.outdir, '_static', 'notebooks')
+    os.makedirs(dest_dir, exist_ok=True)
+    for fname in os.listdir(app.srcdir):
+        if fname.endswith('.ipynb'):
+            shutil.copy2(
+                os.path.join(app.srcdir, fname),
+                os.path.join(dest_dir, fname),
+            )
+
 def setup(app):
-    import os
     nojekyll_path = os.path.join(app.outdir, '.nojekyll')
     app.connect('build-finished', lambda app, exc: open(nojekyll_path, 'w').close())
+    app.connect('build-finished', copy_notebooks)
 
 # -- Options for HTML output -------------------------------------------------
 html_theme = 'sphinx_rtd_theme'
@@ -69,6 +81,22 @@ nbsphinx_prolog = r"""
 .. raw:: html
 
     <div class="nb-notice">
-    This notebook is part of the <strong>pyglenn Worked Examples</strong> collection.
+      <span>This notebook is part of the <strong>pyglenn Worked Examples</strong> collection.</span>
+      <a class="nb-download-btn" href="" data-download-notebook title="Download Jupyter notebook">
+        &#x2B07; Download .ipynb
+      </a>
     </div>
+    <script>
+    (function() {
+      var btn = document.querySelector('[data-download-notebook]');
+      if (btn) {
+        var path = window.location.pathname;
+        var name = path.split('/').pop().replace('.html', '');
+        if (name) {
+          btn.href = '_static/notebooks/' + name + '.ipynb';
+          btn.setAttribute('download', name + '.ipynb');
+        }
+      }
+    })();
+    </script>
 """
