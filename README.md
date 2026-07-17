@@ -46,6 +46,7 @@ lookups.
 | 08 | [Chemical Equilibrium & Gibbs Free Energy](notebooks/en/08_equilibrium_gibbs.ipynb) | $G^\circ = H^\circ - TS^\circ$; $K(T)$; water-gas shift; van't Hoff; high-T dissociation |
 | 09 | [Brayton Gas-Turbine Cycle](notebooks/en/09_brayton_cycle.ipynb) | Air-standard Brayton with real $C_p(T)$; isentropic states via entropy; efficiency vs pressure ratio |
 | 10 | [Property Provider for CFD & Chemical Kinetics](notebooks/en/10_property_provider.ipynb) | Batch tables, a cached coefficient provider, a benchmark, and an ODE integration |
+| 11 | [Comparing Thermodynamic Data Sources](notebooks/en/11_thermodynamic_data_comparison.ipynb) | NASA polynomials vs NIST vs conventional tables for H₂O(g); side-by-side Cp/S/H comparison, benchmark and discrepancy analysis |
 
 ## A note on the data
 

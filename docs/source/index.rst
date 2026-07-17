@@ -52,6 +52,7 @@ To install from source:
    Chemical Equilibrium & Gibbs Free Energy <08_equilibrium_gibbs>
    Brayton Gas-Turbine Cycle <09_brayton_cycle>
    Property Provider for CFD & Chemical Kinetics <10_property_provider>
+   Comparing Thermodynamic Data Sources <11_thermodynamic_data_comparison>
 
 ----
 

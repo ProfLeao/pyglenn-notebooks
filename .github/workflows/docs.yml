@@ -29,7 +29,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pyglenn numpy pandas matplotlib scipy
+          pip install pyglenn numpy pandas matplotlib scipy requests
           pip install sphinx nbsphinx sphinx-rtd-theme ipykernel
 
       - name: Copy notebooks to docs source
@@ -48,7 +48,8 @@ jobs:
             docs/source/07_biofuel_comparison.ipynb \
             docs/source/08_equilibrium_gibbs.ipynb \
             docs/source/09_brayton_cycle.ipynb \
-            docs/source/10_property_provider.ipynb
+            docs/source/10_property_provider.ipynb \
+            docs/source/11_thermodynamic_data_comparison.ipynb
 
       - name: Install pandoc
         run: sudo apt-get install -y pandoc
