@@ -37,13 +37,19 @@ jobs:
           cp notebooks/en/*.ipynb docs/source/
           cp notebooks/pt/*.ipynb docs/source/pt/
           cp notebooks/es/*.ipynb docs/source/es/
+          # Copy _static to language subdirs so they find CSS/JS/logo
+          cp -r docs/source/_static docs/source/pt/
+          cp -r docs/source/_static docs/source/es/
 
       - name: Install pandoc
         run: sudo apt-get install -y pandoc
 
-      - name: Build English documentation (main)
+      - name: Copy logo to _static
         run: |
           cp images/pyglenn-overview.png docs/source/_static/
+
+      - name: Build English documentation (main)
+        run: |
           cd docs
           sphinx-build -b html source _build/html
 
