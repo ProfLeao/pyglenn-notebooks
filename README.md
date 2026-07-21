@@ -4,7 +4,7 @@
 
 📖 **Documentation:** [profleao.github.io/pyglenn-notebooks](https://profleao.github.io/pyglenn-notebooks)
 
-A collection of ten elaborated, self-contained Jupyter notebooks demonstrating
+A collection of eleven elaborated, self-contained Jupyter notebooks demonstrating
 the [`pyglenn`](https://github.com/ProfLeao/pyglenn) thermochemical properties
 calculator. `pyglenn` reconstructs the standard-state molar properties
 $C_p^\circ(T)$, $H^\circ(T)$ and $S^\circ(T)$ from **NASA (Glenn) polynomial
