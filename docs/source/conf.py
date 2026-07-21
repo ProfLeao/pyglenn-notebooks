@@ -5,7 +5,7 @@ import os
 import sys
 
 # -- Project information -----------------------------------------------------
-project = 'pyglenn Worked Examples'
+project = 'pyglenn Labbook'
 copyright = '2026, Dr. Reginaldo G. Leão Jr. — GESESC / IFMG'
 author = 'Dr. Reginaldo G. Leão Jr.'
 release = '1.0'
@@ -23,8 +23,8 @@ nbsphinx_allow_errors = False
 # Kernel to use for notebook execution
 nbsphinx_kernel_name = 'python3'
 
-# Exclude build artifacts from source
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+# Exclude build artifacts and language sub-directories from main build
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'en', 'pt', 'es']
 
 # Ensure .nojekyll is present for GitHub Pages
 html_extra_path = []
@@ -32,14 +32,11 @@ html_extra_path = []
 def copy_notebooks(app, exc):
     """Copy .ipynb source files to _static/notebooks/ so they can be downloaded."""
     import shutil
+    import glob
     dest_dir = os.path.join(app.outdir, '_static', 'notebooks')
     os.makedirs(dest_dir, exist_ok=True)
-    for fname in os.listdir(app.srcdir):
-        if fname.endswith('.ipynb'):
-            shutil.copy2(
-                os.path.join(app.srcdir, fname),
-                os.path.join(dest_dir, fname),
-            )
+    for fpath in glob.glob(os.path.join(app.srcdir, '*.ipynb')):
+        shutil.copy2(fpath, os.path.join(dest_dir, os.path.basename(fpath)))
 
 def setup(app):
     nojekyll_path = os.path.join(app.outdir, '.nojekyll')
@@ -48,10 +45,13 @@ def setup(app):
 
 # -- Options for HTML output -------------------------------------------------
 html_theme = 'sphinx_rtd_theme'
-html_title = 'pyglenn — Worked Examples'
+html_title = 'pyglenn Labbook'
 html_logo = '_static/pyglenn-overview.png'
 html_static_path = ['_static']
-html_css_files = ['custom.css']
+html_css_files = ['custom.css', 'lang-switcher.css']
+
+# Language switcher script
+html_js_files = ['lang-switcher.js']
 
 # Theme options
 html_theme_options = {
@@ -81,7 +81,7 @@ nbsphinx_prolog = r"""
 .. raw:: html
 
     <div class="nb-notice">
-      <span>This notebook is part of the <strong>pyglenn Worked Examples</strong> collection.</span>
+      <span>This notebook is part of the <strong>pyglenn Labbook</strong> collection.</span>
       <a class="nb-download-btn" href="" data-download-notebook title="Download Jupyter notebook">
         &#x2B07; Download .ipynb
       </a>

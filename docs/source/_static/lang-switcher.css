@@ -1,0 +1,69 @@
+/* Language switcher — top right corner */
+
+.lang-switcher {
+  position: fixed;
+  top: 14px;
+  right: 120px;
+  z-index: 9999;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.lang-switcher-btn {
+  display: inline-block;
+  padding: 5px 12px;
+  background: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s;
+  line-height: 1.5;
+}
+
+.lang-switcher-btn:hover {
+  background: #e2e6ea;
+}
+
+.lang-switcher-btn .arrow {
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+.lang-switcher-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 4px;
+  background: white;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  min-width: 140px;
+  overflow: hidden;
+}
+
+.lang-switcher-dropdown.open {
+  display: block;
+}
+
+.lang-switcher-dropdown a {
+  display: block;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.lang-switcher-dropdown a:hover {
+  background: #f0f0f0;
+}
+
+.lang-switcher-dropdown a.active {
+  font-weight: 600;
+  color: #2980b9;
+}

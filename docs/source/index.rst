@@ -1,5 +1,5 @@
 =========================================
-pyglenn — Thermochemical Worked Examples
+pyglenn Labbook — Thermochemical Worked Examples
 =========================================
 
 A collection of ten elaborated, self-contained Jupyter notebooks demonstrating
@@ -26,6 +26,8 @@ Or, using conda / mamba:
 .. code-block:: bash
 
    conda install -c conda-forge pyglenn numpy pandas matplotlib scipy
+   # or, using the conda-forge channel specifier:
+   conda install conda-forge::pyglenn numpy pandas matplotlib scipy
 
 To install from source:
 
@@ -52,7 +54,6 @@ To install from source:
    Chemical Equilibrium & Gibbs Free Energy <08_equilibrium_gibbs>
    Brayton Gas-Turbine Cycle <09_brayton_cycle>
    Property Provider for CFD & Chemical Kinetics <10_property_provider>
-   Comparing Thermodynamic Data Sources <11_thermodynamic_data_comparison>
 
 ----
 
@@ -81,19 +82,4 @@ Citing
 
 If you use this repository in your research or teaching, please cite it via Zenodo:
 
-  Gonçalves Leão Junior, R. (2026). **pyglenn-notebooks**. Zenodo.
-  https://doi.org/10.5281/zenodo.21324685
-
-BibTeX:
-
-.. code-block:: bibtex
-
-   @software{goncalves_leao_junior_2026_21324685,
-     author       = {Gonçalves Leão Junior, Reginaldo},
-     title        = {pyglenn-notebooks},
-     month        = jul,
-     year         = 2026,
-     publisher    = {Zenodo},
-     doi          = {10.5281/zenodo.21324685},
-     url          = {https://doi.org/10.5281/zenodo.21324685},
-   }
+  Gonçalves Leão Junior, R. (2026). *pyglenn-notebooks*. Zenodo. https://doi.org/10.5281/zenodo.21324685

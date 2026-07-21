@@ -35,30 +35,27 @@ jobs:
       - name: Copy notebooks to docs source
         run: |
           cp notebooks/en/*.ipynb docs/source/
-
-      - name: Execute notebooks
-        run: |
-          python -m jupyter nbconvert --to notebook --execute --inplace \
-            docs/source/01_getting_started.ipynb \
-            docs/source/02_nasa_polynomials.ipynb \
-            docs/source/03_property_curves.ipynb \
-            docs/source/04_formation_enthalpy.ipynb \
-            docs/source/05_reaction_enthalpies.ipynb \
-            docs/source/06_adiabatic_flame_temperature.ipynb \
-            docs/source/07_biofuel_comparison.ipynb \
-            docs/source/08_equilibrium_gibbs.ipynb \
-            docs/source/09_brayton_cycle.ipynb \
-            docs/source/10_property_provider.ipynb \
-            docs/source/11_thermodynamic_data_comparison.ipynb
+          cp notebooks/pt/*.ipynb docs/source/pt/
+          cp notebooks/es/*.ipynb docs/source/es/
 
       - name: Install pandoc
         run: sudo apt-get install -y pandoc
 
-      - name: Build Sphinx documentation
+      - name: Build English documentation (main)
         run: |
           cp images/pyglenn-overview.png docs/source/_static/
           cd docs
-          python -m sphinx -b html source _build/html
+          sphinx-build -b html source _build/html
+
+      - name: Build Portuguese documentation
+        run: |
+          cd docs
+          sphinx-build -b html -c source source/pt _build/html/pt
+
+      - name: Build Spanish documentation
+        run: |
+          cd docs
+          sphinx-build -b html -c source source/es _build/html/es
 
       - name: Create .nojekyll
         run: touch docs/_build/html/.nojekyll
