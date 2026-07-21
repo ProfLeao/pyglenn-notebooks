@@ -13,7 +13,7 @@
       'es': { label: 'Espa\u00F1ol',   flag: '\uD83C\uDDEA\uD83C\uDDF8' }
     };
 
-    var basePath = (currentLang === 'en') ? '/' : '../';
+    var basePath = (currentLang === 'en') ? '' : '../';
     var current = langs[currentLang];
 
     var container = document.createElement('div');
