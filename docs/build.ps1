@@ -6,10 +6,10 @@ param(
 
 $ErrorActionPreference = "Stop"
 $rootDir = Split-Path -Parent $PSScriptRoot
-$sourceDir = Join-Path $rootDir "source"
-$buildDir = Join-Path $rootDir "_build"
+$sourceDir = Join-Path $PSScriptRoot "source"
+$buildDir = Join-Path $PSScriptRoot "_build"
 $htmlDir = Join-Path $buildDir "html"
-$notebooksDir = Join-Path (Split-Path -Parent $rootDir) ".." "notebooks"
+$notebooksDir = Join-Path $rootDir "notebooks"
 
 # Resolve to absolute
 $notebooksDir = Resolve-Path $notebooksDir

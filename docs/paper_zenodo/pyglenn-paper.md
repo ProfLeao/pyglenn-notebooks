@@ -54,7 +54,7 @@ The theoretical framework is applied across four major domains:
 
 The repository is structured as ten sequentially ordered notebooks, each building on concepts introduced earlier.
 
-**Notebook 01 — Getting Started** establishes the workflow: connecting to the bundled database, searching for species by name or formula, and computing $C_p^\circ$, $H^\circ$, and $S^\circ$ at a single temperature. A robust `species_id` helper function is introduced for exact-name lookups, along with error-handling patterns.
+**Notebook 01 — Getting Started** establishes the workflow: connecting to the bundled database, searching for species by name or formula, and computing $C_p^\circ$, $H^\circ$, and $S^\circ$ at a single temperature. The `exact_match=True` parameter of `get_available_species()` is introduced for reliable exact-name lookups, along with exception-based error handling via `try/except ThermoCalcError`.
 
 **Notebook 02 — NASA Polynomials Under the Hood** demystifies the numerical machinery by implementing the 9-term polynomial evaluation from scratch and validating the results against `pyglenn`'s built-in API. The piecewise nature of the intervals and the meaning of the integration constants $b_1$ and $b_2$ are explained with worked numerical examples.
 
