@@ -4,7 +4,7 @@
 
 📖 **Documentation:** [profleao.github.io/pyglenn-notebooks](https://profleao.github.io/pyglenn-notebooks)
 
-A collection of eleven elaborated, self-contained Jupyter notebooks demonstrating
+A collection of twelve elaborated, self-contained Jupyter notebooks demonstrating
 the [`pyglenn`](https://github.com/ProfLeao/pyglenn) thermochemical properties
 calculator. `pyglenn` reconstructs the standard-state molar properties
 $C_p^\circ(T)$, $H^\circ(T)$ and $S^\circ(T)$ from **NASA (Glenn) polynomial
@@ -29,8 +29,8 @@ conda install -c conda-forge pyglenn numpy pandas matplotlib scipy
 ```
 
 Every notebook opens with the same short preamble that connects to the bundled
-database and defines a robust `species_id(calc, name)` helper for exact-name
-lookups.
+database. Species are resolved with `get_available_species(name, exact_match=True)`
+for case-insensitive exact lookups (pyglenn >= 0.1.10).
 
 ## The notebooks
 
@@ -46,18 +46,19 @@ lookups.
 | 08 | [Chemical Equilibrium & Gibbs Free Energy](notebooks/en/08_equilibrium_gibbs.ipynb) | $G^\circ = H^\circ - TS^\circ$; $K(T)$; water-gas shift; van't Hoff; high-T dissociation |
 | 09 | [Brayton Gas-Turbine Cycle](notebooks/en/09_brayton_cycle.ipynb) | Air-standard Brayton with real $C_p(T)$; isentropic states via entropy; efficiency vs pressure ratio |
 | 10 | [Property Provider for CFD & Chemical Kinetics](notebooks/en/10_property_provider.ipynb) | Batch tables, a cached coefficient provider, a benchmark, and an ODE integration |
-| 11 | [Comparing Thermodynamic Data Sources](notebooks/en/11_thermodynamic_data_comparison.ipynb) | NASA polynomials vs NIST vs conventional tables for H₂O(g); side-by-side Cp/S/H comparison, benchmark and discrepancy analysis |
+| 11 | [Mixtures & Mole-Fraction Weighted Properties](notebooks/en/11_mixtures.ipynb) | The `Mixture`/`MixedProperties` dataclasses and `mixture_properties()`; mole- and mass-basis properties, composition validation with `CompositionError` |
+| 12 | [Fitting NASA-7 Coefficients](notebooks/en/12_fit_nasa7.ipynb) | Recovering NASA-7 coefficients from tabulated Cp(T) with `fit_nasa7` and `fit_nasa7_multi` |
 
 ## A note on the data
 
-* `pyglenn`'s `h_relative` (`calculate_properties(...)['h_relative']`) is the
+* `pyglenn`'s `h_relative` (`calculate_properties(...).h_relative`) is the
   **standardized** molar enthalpy on the NASA scale — it already **includes the
   enthalpy of formation**. Consequently reference-state elements read
   $H^\circ(298.15\,\mathrm{K}) \approx 0$, compounds read their
   $\Delta_f H^\circ$, and reaction enthalpies are simple stoichiometric sums.
-* In the bundled database the dedicated `heat_of_formation_298K` column is not
-  populated, so `calculate_formation_enthalpy()` returns `None`. Notebook 04
-  shows how to obtain $\Delta_f H^\circ$ from `h_relative` at 298.15 K instead.
+* Since 0.2.0 the dedicated `heat_of_formation_298K` column is populated, so
+  `calculate_formation_enthalpy()` returns $\Delta_f H^\circ$ directly. Notebook 04
+  shows this route and the `h_relative` route agree.
 
 ## Reproducing
 

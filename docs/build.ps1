@@ -47,7 +47,7 @@ foreach ($lang in $langs) {
 # ---------- Step 2: Build root landing page ----------
 Write-Host "`n=== Building root landing page ===" -ForegroundColor Cyan
 $env:SPHINX_ROOT_BUILD = "1"
-sphinx-build -b html $sourceDir (Join-Path $htmlDir "") @args
+python -m sphinx -b html $sourceDir (Join-Path $htmlDir "") @args
 Write-Host "  Root landing page built." -ForegroundColor Green
 
 # ---------- Step 3: Build each language ----------
@@ -61,7 +61,7 @@ foreach ($lang in $langs) {
     $langOutput = Join-Path $htmlDir $lang
     
     # Use -c to point to the parent conf.py, source is the language subdir
-    sphinx-build -b html -c $sourceDir $langSource $langOutput @args
+    python -m sphinx -b html -c $sourceDir $langSource $langOutput @args
     Write-Host "  $lang built to $langOutput" -ForegroundColor Green
 }
 

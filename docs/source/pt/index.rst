@@ -2,7 +2,7 @@
 pyglenn Labbook — Exemplos Termoquímicos Resolvidos
 =========================================
 
-Coleção de dez cadernos Jupyter elaborados e autocontidos que demonstram
+Coleção de doze cadernos Jupyter elaborados e autocontidos que demonstram
 o calculador de propriedades termoquímicas `pyglenn <https://github.com/ProfLeao/pyglenn>`_.
 ``pyglenn`` reconstrói as propriedades molares no estado padrão
 :math:`C_p^\circ(T)`, :math:`H^\circ(T)` e :math:`S^\circ(T)` a partir de
@@ -43,6 +43,8 @@ Ou usando conda / mamba:
    08_equilibrio_gibbs
    09_ciclo_brayton
    10_provedor_propriedades
+   11_misturas
+   12_ajuste_nasa7
 
 ----
 

@@ -2,7 +2,7 @@
 pyglenn Labbook — Thermochemical Worked Examples
 =========================================
 
-A collection of ten elaborated, self-contained Jupyter notebooks demonstrating
+A collection of twelve elaborated, self-contained Jupyter notebooks demonstrating
 the `pyglenn <https://github.com/ProfLeao/pyglenn>`_ thermochemical properties
 calculator. ``pyglenn`` reconstructs the standard-state molar properties
 :math:`C_p^\circ(T)`, :math:`H^\circ(T)` and :math:`S^\circ(T)` from **NASA (Glenn) polynomial
@@ -54,6 +54,8 @@ To install from source:
    Chemical Equilibrium & Gibbs Free Energy <08_equilibrium_gibbs>
    Brayton Gas-Turbine Cycle <09_brayton_cycle>
    Property Provider for CFD & Chemical Kinetics <10_property_provider>
+   Mixtures & Mole-Fraction Weighted Properties <11_mixtures>
+   Fitting NASA-7 Coefficients from Tabulated Cp(T) Data <12_fit_nasa7>
 
 ----
 
@@ -66,14 +68,14 @@ To install from source:
 About the data
 ==============
 
-* ``pyglenn``'s ``h_relative`` (``calculate_properties(...)['h_relative']``) is the
+* ``pyglenn``'s ``h_relative`` (``calculate_properties(...).h_relative``) is the
   **standardized** molar enthalpy on the NASA scale — it already **includes the
   enthalpy of formation**. Consequently reference-state elements read
   :math:`H^\circ(298.15\,\mathrm{K}) \approx 0`, compounds read their
   :math:`\Delta_f H^\circ`, and reaction enthalpies are simple stoichiometric sums.
-* In the bundled database the dedicated ``heat_of_formation_298K`` column is not
-  populated, so ``calculate_formation_enthalpy()`` returns ``None``. Notebook 04
-  shows how to obtain :math:`\Delta_f H^\circ` from ``h_relative`` at 298.15 K instead.
+* Since 0.2.0 the dedicated ``heat_of_formation_298K`` column is populated, so
+  ``calculate_formation_enthalpy()`` returns :math:`\Delta_f H^\circ` directly.
+  Notebook 04 shows this route and the ``h_relative`` route agree.
 
 ----
 
