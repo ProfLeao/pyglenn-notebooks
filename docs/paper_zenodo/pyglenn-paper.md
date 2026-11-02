@@ -82,28 +82,6 @@ The repository is structured as twelve sequentially ordered notebooks, each buil
 
 All notebooks are pre-executed and committed with visible outputs. The documentation is built with Sphinx and the Read the Docs theme, hosted via GitHub Pages, and regenerated automatically on every push to the main branch through a GitHub Actions continuous-deployment pipeline.
 
-### Illustrative figures
-
-![Heat capacity reveals molecular structure](figures/fig_equipartition.png)
-
-**Figure 1** — The dimensionless $C_p/R$ is flat at $5/2$ for monatomic Ar and $7/2$ for diatomics at moderate temperature, then climbs as vibrational modes activate (Notebook 03).
-
-![Adiabatic flame temperature vs. equivalence ratio](figures/fig_flame_phi.png)
-
-**Figure 2** — Methane/air $T_\mathrm{ad}$ falls from 2326 K at stoichiometry ($\phi = 1$) to 1481 K at $\phi = 0.5$ as excess air absorbs heat (Notebook 06).
-
-![Brayton efficiency: real vs. cold air-standard](figures/fig_brayton_efficiency.png)
-
-**Figure 3** — The real-$C_p(T)$ Brayton efficiency (45.6%) lies below the cold air-standard value (48.2%) because $\gamma(T)$ decreases as temperature rises (Notebook 09).
-
-![NASA-7 fit residuals over a wide range](figures/fig_fit_residuals.png)
-
-**Figure 4** — Over 300–6000 K a single 7-term polynomial leaves residuals up to 0.225 J/(mol·K), while a 3-interval `fit_nasa7_multi` fit reduces the maximum error to 0.003 J/(mol·K), a ~70× improvement (Notebook 12).
-
-![Oxygen-enriched air properties](figures/fig_o2_enrichment.png)
-
-**Figure 5** — Raising the O₂ mole fraction from 21% to 40% increases the mean molar mass (28.85 → 29.61 g/mol) while the mass-basis $C_p$ falls (1149 → 1134 J/(kg·K)) (Notebook 11).
-
 # 4. Conclusion
 
 The **pyglenn-notebooks** repository successfully bridges the gap between a lightweight thermochemical library and practical engineering education. By providing twelve fully worked, self-contained Jupyter notebooks, it enables students, researchers, and practicing engineers to:
