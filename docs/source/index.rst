@@ -6,7 +6,7 @@ A collection of twelve elaborated, self-contained Jupyter notebooks demonstratin
 the `pyglenn <https://github.com/ProfLeao/pyglenn>`_ thermochemical properties
 calculator. ``pyglenn`` reconstructs the standard-state molar properties
 :math:`C_p^\circ(T)`, :math:`H^\circ(T)` and :math:`S^\circ(T)` from **NASA (Glenn) polynomial
-coefficients** stored in a bundled SQLite database (~2030 species, 3772
+coefficients** stored in a bundled SQLite database (~2035 species, 3795
 temperature intervals).
 
 ----

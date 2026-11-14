@@ -7,7 +7,7 @@ o calculador de propriedades termoquímicas `pyglenn <https://github.com/ProfLea
 ``pyglenn`` reconstrói as propriedades molares no estado padrão
 :math:`C_p^\circ(T)`, :math:`H^\circ(T)` e :math:`S^\circ(T)` a partir de
 **coeficientes polinomiais da NASA (Glenn)** armazenados em um banco de
-dados SQLite empacotado (~2030 espécies, 3772 intervalos de temperatura).
+dados SQLite empacotado (~2035 espécies, 3795 intervalos de temperatura).
 
 ----
 
