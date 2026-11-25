@@ -4,7 +4,7 @@
 
 📖 **Documentation:** [profleao.github.io/pyglenn-notebooks](https://profleao.github.io/pyglenn-notebooks)
 
-A collection of twelve elaborated, self-contained Jupyter notebooks demonstrating
+A collection of thirteen elaborated, self-contained Jupyter notebooks demonstrating
 the [`pyglenn`](https://github.com/ProfLeao/pyglenn) thermochemical properties
 calculator. `pyglenn` reconstructs the standard-state molar properties
 $C_p^\circ(T)$, $H^\circ(T)$ and $S^\circ(T)$ from **NASA (Glenn) polynomial
@@ -30,7 +30,8 @@ conda install -c conda-forge pyglenn numpy pandas matplotlib scipy
 
 Every notebook opens with the same short preamble that connects to the bundled
 database. Species are resolved with `get_available_species(name, exact_match=True)`
-for case-insensitive exact lookups (pyglenn >= 0.1.10).
+for case-insensitive exact lookups (pyglenn >= 0.1.10); notebooks 01 and 11 use
+the `phase_detail` filter and notebook 13 uses `uncertainty()`, both new in 0.5.0.
 
 ## The notebooks
 
@@ -48,6 +49,7 @@ for case-insensitive exact lookups (pyglenn >= 0.1.10).
 | 10 | [Property Provider for CFD & Chemical Kinetics](notebooks/en/10_property_provider.ipynb) | Batch tables, a cached coefficient provider, a benchmark, and an ODE integration |
 | 11 | [Mixtures & Mole-Fraction Weighted Properties](notebooks/en/11_mixtures.ipynb) | The `Mixture`/`MixedProperties` dataclasses and `mixture_properties()`; mole- and mass-basis properties, composition validation with `CompositionError` |
 | 12 | [Fitting NASA-7 Coefficients](notebooks/en/12_fit_nasa7.ipynb) | Recovering NASA-7 coefficients from tabulated Cp(T) with `fit_nasa7` and `fit_nasa7_multi` |
+| 13 | [Uncertainty Budget](notebooks/en/13_uncertainty_budget.ipynb) | The `uncertainty()` envelope (0.5.0): NIST-JANAF validation coverage, species flagged by the band, and propagation of the band to a reaction enthalpy |
 
 ## A note on the data
 

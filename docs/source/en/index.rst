@@ -2,7 +2,7 @@
 pyglenn Labbook — Thermochemical Worked Examples
 =========================================
 
-A collection of twelve elaborated, self-contained Jupyter notebooks demonstrating
+A collection of thirteen elaborated, self-contained Jupyter notebooks demonstrating
 the `pyglenn <https://github.com/ProfLeao/pyglenn>`_ thermochemical properties
 calculator. ``pyglenn`` reconstructs the standard-state molar properties
 :math:`C_p^\circ(T)`, :math:`H^\circ(T)` and :math:`S^\circ(T)` from **NASA (Glenn) polynomial
@@ -53,6 +53,7 @@ To install from source:
    10_property_provider
    11_mixtures
    12_fit_nasa7
+   13_uncertainty_budget
 
 ----
 
